@@ -281,14 +281,10 @@ public class Login {
 				System.out.println("| Enter Employee ID to Update Details  | ");
 				System.out.println("|--------------------------------------|");
 				System.out.println(
-						"1.Update Employee Name \n2.Update Employee Designation\n3.Update Employee Basic_Salary\n4.Update Employees Address\n5.Update Employee Email\n6.Update Employee Contact info\n7.Back to Menu...");
+						"1.Update Employee Name \n2.Update Employee Designation\n3.Update Employee Basic_Salary\n4.Update Employees Address\n5.Update Employee Email\n6.Update Employee Contact info\n7.Exit");
 				System.out.println("****Select an Option to Proceed****");
 				response2 = Integer.parseInt(br.readLine());
-				if(response2==7) {
-					adminlogin();
-					break;
-				}
-				else {
+				
 				switch (response2) {
 				case 1:
 					updatename();
@@ -308,17 +304,20 @@ public class Login {
 				case 6:
 					updatephno();
 					break;
+				case 7:
+					System.out.println("Logged out Successfully...");
+					break;
 				default:
 					System.out.println("Invalid Selection...!");
 					break;
 				}
-				}
-			} while (response2 <7);
+				
+			} while (response2!=7);
 			
 		} catch (Exception e) {
 			System.out.println(e); // Catching Exception by printing Message
 		}
-		}
+}
 
 	private static void updatephno() throws NumberFormatException, Exception, SQLException {
 		// TODO Auto-generated method stub
@@ -633,7 +632,7 @@ public class Login {
 			}
 
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Enter Valid Details!");
 		}
 
 	}
